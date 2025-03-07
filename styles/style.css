@@ -10,9 +10,6 @@
   background-color: #000028;
   font-family: var(--main-font);
   overflow-x: hidden;
-  height: 100vh;
-  max-inline-size: 1024px;
-  min-block-size: 100%;
 }
 
 /* Шапка */
@@ -22,28 +19,39 @@
   /* grid-template-columns: repeat(3, 1fr); */
   grid-template-columns: 1fr min-content 1fr;
   grid-template-rows: 1fr min-content 1fr;
-  /* gap: 20px; */
   padding: 20px;
   align-items: start;
   justify-items: center;
-  height: 768px;
   border: 1px solid #FF0070;
-  margin: 0 auto;
+  margin: auto;
+  /* max-block-size: 100vh;
+  min-block-size: 768px;
+  max-inline-size: 1024px; */
+  /* max-block-size: 1024px; */
+  width: 100%;
+  height: 100vh;
+  max-width: 1024px;
+  max-height: 768px;
+  position: relative;
 }
 
 @media (375px < width <= 768px) {
   .header {
-    grid-template-columns: auto;
-    height: 100vh;
-    max-block-size: 1024px;
+    /* grid-template-columns: auto; */
+    /* height: 100vh;
+    max-block-size: 1024px; */
+    max-width: 768px;
+    max-height: 1024px;
+    height: 1024px;
   }
 }
 
 @media (width <= 375px) {
   .header {
-    grid-template-columns: min-content 1fr;
+    /* grid-template-columns: min-content 1fr; */
     padding: 10px;
-    max-block-size: 668px;
+    max-width: 375px;
+    max-height: 668px;
   }
 }
 
@@ -53,10 +61,13 @@
 
 .decorated-zone::after {
   content: '';
-  display: block;
+  /* display: block; */
+  /* display: inline; */
+  /* display: grid; */
+  display: inline-block;
   position: absolute;
-  width: 25px;
-  height: 25px;
+  inline-size: 25px;
+  block-size: 25px;
   border-top: 1px solid #FF0070;
   border-right: 1px solid #FF0070;
   left: 979px;
@@ -65,10 +76,13 @@
 
 .decorated-zone::before {
   content: '';
-  display: block;
+  /* display: block; */
+  /* display: inline; */
+  /* display: grid; */
+  display: inline-block;
   position: absolute;
-  width: 25px;
-  height: 25px;
+  inline-size: 25px;
+  block-size: 25px;
   border-bottom: 1px solid #FF0070;
   border-left: 1px solid #FF0070; 
   left: 20px;
@@ -77,12 +91,10 @@
 
 @media (375px < width <= 768px) {
   .decorated-zone::after {
-    content: '';
     top: 20px;
     left: 723px;
   }
   .decorated-zone::before {
-    content: '';
     left: 20px;
     top: 979px;
   }
@@ -102,6 +114,7 @@
 
 .header__decorative {
   display: inline-block;
+  
 }
 
 .header__decorative::after {
@@ -121,8 +134,8 @@
 .header__decorative::before {
   content: '';
   position: absolute;
-  width: 9px;
-  height: 9px;
+  inline-size: 9px;
+  block-size: 9px;
   background-color: #FF0070;
   border-radius: 50%;
   box-shadow: 0 0 4px 2px var(--accent-color);
@@ -132,12 +145,10 @@
 
 @media (375px < width <= 768px) {
   .header__decorative::after {
-    content: '';
     left: 687px;
     top: 20px;
   }
   .header__decorative::before {
-    content: '';
       top: 28px;
       left: 730px;
   }
@@ -156,8 +167,8 @@
 
 
 .header__theme-menu {
-  max-width: 230px;
-  max-height: 26px;
+  max-inline-size: 230px;
+  max-block-size: 26px;
 }
 
 .header__theme-menu-list {
@@ -171,7 +182,6 @@
 @media (375px < width <= 768px) {
   .header__theme-menu {
     grid-column: 3;
-    /* grid-row: 1; */
     justify-self: end;
     margin-block-start: 172px;
   }
@@ -183,10 +193,15 @@
 
 @media (width <= 375px) {
   .header__theme-menu {
-    justify-self: center;
+    grid-column: 3;
+    justify-self: end;
     margin-block-start: 65px;
     
   }
+  .header__theme-menu-list {
+    flex-direction: column;
+  }
+
 }
 
 .header__theme-menu-button {
@@ -229,18 +244,25 @@
 
 .header__text {
   grid-column: 2/4;
-  display: inline-block;
+  display: grid;
   justify-self: end;
   line-height: 23.4px;
   max-inline-size: 491px;
-  block-size: 71px;
+  min-inline-size: 355px;
+  inline-size: 100%;
+  max-block-size: 117px;
+  min-block-size: 71px;
+  /* block-size: 71px; */
 margin-block-start: 114px;
+
 }
 
 @media (375px < width <= 768px) {
   .header__text {
     margin-block-start: 162px;
-    max-inline-size: 364px;
+    /* max-inline-size: 364px;
+    block-size: 117px; */
+    inline-size: 364px;
     block-size: 117px;
   }
 }
@@ -248,6 +270,9 @@ margin-block-start: 114px;
 @media (width <= 375px) {
   .header__text {
     margin-block-start: 55px;
+    max-inline-size: 355px;
+    block-size: 117px;
+
   }
 }
 
@@ -264,6 +289,14 @@ margin-block-start: 114px;
   margin: 0 auto 80px;
   border: 1px solid #FF0070;
   max-inline-size: 1024px;
+  inline-size: 100%;
+  
+}
+
+@media (375px < width <= 768px) {
+  .content-section {
+    grid-template-columns: auto;
+  }
 }
 
 @media (width <= 375px) {
@@ -277,29 +310,27 @@ margin-block-start: 114px;
   }
 }
 
-@media (375px < width <= 768px) {
-  .content-section {
-    grid-template-columns: auto;
-  }
-}
-
 .content__title {
   color: var(--accent-color);
   font-weight: 700;
   font-size: 18px;
-  inline-size: 315px;
+  /* max-inline-size: 315px;
+  inline-size: 100%; */
+  inline-size: clamp(236px, 100%, 315px);
   
 }
 
+
+/* @media (375px < width <= 768px) {
+  .content__title {
+    max-inline-size: 235px;
+  }
+} */
+
 @media (width <= 375px) {
   .content__title {
-    inline-size: 355px;
-  }
-}
-
-@media (375px < width <= 768px) {
-  .content__title {
-    inline-size: 236px;
+    /* max-inline-size: 355px; */
+    inline-size: 100%;
   }
 }
 
@@ -338,13 +369,8 @@ margin-block-start: 114px;
 .content__theme-why-list {
   grid-column: 2 / span 2;
   max-inline-size: 649px;
+  inline-size: 60%;
   
-}
-
-@media (width <= 375px) {
-  .content__theme-why-list {
-    max-inline-size: 355px;
-  }
 }
 
 @media (375px < width <= 768px) {
@@ -353,6 +379,11 @@ margin-block-start: 114px;
   }
 }
 
+@media (width <= 375px) {
+  .content__theme-why-list {
+    max-inline-size: 355px;
+  }
+}
 
 /* 2 секция */
 
@@ -363,19 +394,21 @@ margin-block-start: 114px;
   gap: 20px;
 }
 
+
+
+@media (375px < width <= 768px) {
+  .content__theme-attention-list {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 @media (width <= 375px) {
   .content__theme-attention-list {
 display: flex;
 flex-direction: column;
 max-inline-size: 375px;
 
-  }
-}
-
-@media (375px < width <= 768px) {
-  .content__theme-attention-list {
-    display: flex;
-    flex-direction: column;
   }
 }
 
