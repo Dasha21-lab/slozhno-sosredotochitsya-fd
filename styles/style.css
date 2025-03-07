@@ -314,23 +314,21 @@ margin-block-start: 114px;
   color: var(--accent-color);
   font-weight: 700;
   font-size: 18px;
-  /* max-inline-size: 315px;
-  inline-size: 100%; */
-  inline-size: clamp(236px, 100%, 315px);
+  max-inline-size: 315px;
+  inline-size: 100%;
   
 }
 
 
-/* @media (375px < width <= 768px) {
+@media (375px < width <= 768px) {
   .content__title {
-    max-inline-size: 235px;
+    max-inline-size: 236px;
   }
-} */
+}
 
 @media (width <= 375px) {
   .content__title {
-    /* max-inline-size: 355px; */
-    inline-size: 100%;
+    max-inline-size: 355px;
   }
 }
 
@@ -369,7 +367,7 @@ margin-block-start: 114px;
 .content__theme-why-list {
   grid-column: 2 / span 2;
   max-inline-size: 649px;
-  inline-size: 60%;
+  inline-size: 100%;
   
 }
 
@@ -431,13 +429,12 @@ max-inline-size: 375px;
   display: grid;
   grid-template-columns: repeat(3, 1fr); 
   gap: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-bottom: 80px;
+  margin: 80px auto 0;
+  padding-inline-start: 20px;
+  padding-inline-end: 20px;
   border: 1px solid #FF0070;
-  margin-top: 0;
-  margin-left: auto;
-  margin-right: auto;
+  max-inline-size: 1024px;
+  inline-size: 100%;
 }
 
 .content__theme-gallery-title {
@@ -456,8 +453,8 @@ grid-column: 1 / span 3;
     display: flex;
     flex-direction: column;
     max-inline-size: 375px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-inline-start: 10px;
+    padding-inline-end: 10px;
     gap: 10px;
   }
 
@@ -514,8 +511,32 @@ grid-column: 1 / span 3;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   border: 1px solid #FF0070;
+  margin: auto;
+  width: 100%;
+  max-width: 1024px;
 
  }
+
+ @media (375px < width <= 768px) {
+  .footer {
+    /* grid-template-columns: auto; */
+    /* height: 100vh;
+    max-block-size: 1024px; */
+    max-width: 768px;
+    max-height: 1024px;
+    height: 1024px;
+  }
+}
+
+@media (width <= 375px) {
+  .footer {
+    /* grid-template-columns: min-content 1fr; */
+    padding: 10px;
+    max-width: 375px;
+    max-height: 668px;
+  }
+}
+
 
 .footer__title {
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
@@ -526,14 +547,15 @@ grid-column: 1 / span 3;
   align-self: center;
 } 
 
-
+@media (width <= 375px) {
   .footer__title {
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
 
   }
 
+}
 
-
+  
 /* медиазапрос */
 
 
