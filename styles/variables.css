@@ -15,10 +15,9 @@
   --title-decor-color: #000028;
   --button-border: 1px solid #FF0070;
   --button-hover-border: 1px solid rgba(255, 0, 112, 0.4);
-  --button-border: 1px solid #FF0070;
   --link-border: 1px solid #F1B2CE;
   --background-image-dark: url(../images/cover-image-dark.png);
-  --h1-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  --font-size-desktop: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   --font-size-mobile: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   --h2-font-size: 18px;
   --title-decor-font-size: 18px;

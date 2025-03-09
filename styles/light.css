@@ -43,25 +43,14 @@
 }
 
 @media (prefers-color-scheme: light) {
-	.theme-auto .header__decorative::after {
-    display: none;
-	}
+  .theme-auto .header__decorative {
+    visibility: hidden;
+  }
 
-  .theme-auto .header__decorative::before {
-    display: none;
-	}
+  .theme-light .header__decorative {
+    visibility: hidden;
+  }
 }
-
-.theme-light .header__decorative::after {
-  display: none;
-}
-
-.theme-light .header__decorative::before {
-  display: none;
-}
-
-
-
 
 .theme-light .page {
   /* Вам также нужно будет написать ряд подобных селекторов */
