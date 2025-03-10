@@ -14,14 +14,13 @@
   --button-color: #FF0070;
   --decor-color: #FF0070;
   --accent-color: #FF0070;
-  --h2-color: #FF0070;
+  --title-color: #FF0070;
   --bg-color: #000028;
   --footer-color: #DB00FF;
   --text-color: #F1B2CE;
   --title-decor-color: #000028;
   --button-border: 1px solid #FF0070;
   --button-hover-border: 1px solid rgba(255, 0, 112, 0.4);
-  --button-border: 1px solid #FF0070;
   --link-border: 1px solid #F1B2CE;
   --background-image-dark: url(../images/cover-image-dark.png);
 }

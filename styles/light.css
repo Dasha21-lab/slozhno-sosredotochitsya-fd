@@ -13,7 +13,7 @@
   --header-color: #FFC2E6;
   --button-color: #353430;
   --decor-color: #353430;
-  --h2-color: #353430;
+  --title-color: #353430;
   --text-color: #353430;
   --title-decor-color: #353430;
   --accent-color: #FF8DCB;
@@ -30,7 +30,7 @@
     --header-color: #FFC2E6;
     --button-color: #353430;
     --decor-color: #353430;
-    --h2-color: #353430;
+    --title-color: #353430;
     --text-color: #353430;
     --title-decor-color: #353430;
     --accent-color: #FF8DCB;
@@ -43,13 +43,17 @@
 }
 
 @media (prefers-color-scheme: light) {
-  .theme-auto .header__decorative {
-    visibility: hidden;
-  }
+	.theme-auto .header__decorative {
+   visibility: hidden; 
+	}
+}
 
-  .theme-light .header__decorative {
-    visibility: hidden;
-  }
+.theme-light .header__decorative::after {
+  display: none;
+}
+
+.theme-light .header__decorative::before {
+  display: none;
 }
 
 .theme-light .page {
