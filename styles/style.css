@@ -386,10 +386,6 @@ border-block-end: var(--link-border);
   gap: 20px;
 }
 
-.section-attention .articles-list-item {
-  margin-block-end: 0;
-}
-
 @media (375px < width <= 768px) {
   .section-attention .articles-list {
     display: flex;
@@ -403,6 +399,10 @@ border-block-end: var(--link-border);
     flex-direction: column;
     max-inline-size: 375px;
   }
+}
+
+.section-attention .articles-list-item {
+  margin-block-end: 0;
 }
 
 .section-concentration-container {
